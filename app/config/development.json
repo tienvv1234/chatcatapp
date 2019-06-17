@@ -1,0 +1,22 @@
+{
+  "host": "http://localhost:3000",
+  "dbURI": "mongodb://127.0.0.1:27017/chatcat",
+  "sessionSecret": "catscanfly",
+  "fb": {
+    "clientID": "875075526191715",
+    "clientSecret": "91e7d8b1177a26b863bb6a55758777a6",
+    "callbackURL": "//localhost:3000/auth/facebook/callback",
+    "profileFields": ["id", "displayName", "photos"]
+  },
+  "google": {
+    "clientID": "882894736716-e2vunmfaagrq25cnrjue7q8oalt5ltr7.apps.googleusercontent.com",
+    "clientSecret": "GvHeg-NbesCpniiNhRDFK099",
+    "callbackURL": "//localhost:3000/auth/google/callback",
+    "scope": ["openid", "email", "profile"]
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "password": ""
+  }
+}
