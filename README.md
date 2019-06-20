@@ -32,3 +32,7 @@ redis
 - Can scale as a cluster.
 - Doesn't run out of storage unlike ram
 - doesn't lose data on restart
+
+heroku create `create app in heroku`
+
+heroku git:remote -a `name app` update the Heroku Git URL

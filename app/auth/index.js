@@ -4,7 +4,7 @@ const config = require('../config');
 const h = require('../helpers');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-
+const logger = require('../logger');
 module.exports = () => {
   passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -30,7 +30,9 @@ module.exports = () => {
           .then(newChatUser => {
             done(null, newChatUser);
           })
-          .catch(error => console.log('Error when creating new user'));
+          .catch(error =>
+            logger.log('error', 'Error when creating new user: ' + error)
+          );
       }
     });
   };

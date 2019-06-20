@@ -1,0 +1,5 @@
+{"level":"error","message":"Mongoose connection error: MongoNetworkError: getaddrinfo ENOTFOUND 127.0.21210.1 127.0.21210.1:27017"}
+{"level":"error","message":"Mongoose connection error: MongoNetworkError: getaddrinfo ENOTFOUND 127.0.21210.1 127.0.21210.1:27017"}
+{"level":"error","message":"Mongoose connection error: MongoNetworkError: getaddrinfo ENOTFOUND 127.0.21210.1 127.0.21210.1:27017"}
+2019-06-20T16:13:52.918Z [right meow!] error: Mongoose connection error: MongoNetworkError: getaddrinfo ENOTFOUND 127.0.21210.1 127.0.21210.1:27017
+2019-06-20T16:14:21.385Z [Log] error: Mongoose connection error: MongoNetworkError: getaddrinfo ENOTFOUND 127.0.21210.1 127.0.21210.1:27017
