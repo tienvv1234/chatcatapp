@@ -36,3 +36,5 @@ redis
 heroku create `create app in heroku`
 
 heroku git:remote -a `name app` update the Heroku Git URL
+
+git push heroku master
