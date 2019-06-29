@@ -11,6 +11,7 @@ const redis = require('redis').createClient();
 const RedisStore = require('connect-redis')(session);
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('config.redis', config.redis);
   // Initialize session with settings for production
   module.exports = session({
     secret: config.sessionSecret,
