@@ -7,11 +7,11 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const config = require('../config');
 const db = require('../db');
-// const redis = require('redis').createClient(
-//   config.redis.port,
-//   config.redis.host
-// );
-// const RedisStore = require('connect-redis')(session);
+const redis = require('redis').createClient(
+  config.redis.port,
+  config.redis.host
+);
+const RedisStore = require('connect-redis')(session);
 
 if (process.env.NODE_ENV === 'production') {
   // Initialize session with settings for production
