@@ -7,7 +7,10 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const config = require('../config');
 const db = require('../db');
-const redis = require('redis').createClient();
+const redis = require('redis').createClient({
+  host: config.redis.host,
+  port: config.redis.port
+});
 const RedisStore = require('connect-redis')(session);
 
 if (process.env.NODE_ENV === 'production') {
@@ -17,9 +20,8 @@ if (process.env.NODE_ENV === 'production') {
     resave: false,
     saveUninitialized: true,
     store: new RedisStore({
-      host:
-        'redis://h:p6c0e318479b97b7540b4b0194694ade7aaea47c083705dc32577b0a851c6e17f@ec2-35-173-225-39.compute-1.amazonaws.com',
-      port: '25459',
+      host: config.redis.host,
+      port: config.redis.port,
       client: redis,
       ttl: 86400
     })
