@@ -19,15 +19,15 @@ if (process.env.NODE_ENV === 'production') {
     secret: config.sessionSecret,
     resave: false,
     saveUninitialized: false,
-    // store: new RedisStore({
-    //   host: config.redis.host,
-    //   port: config.redis.port,
-    //   client: redis,
-    //   ttl: 260
-    // })
-    store: new MongoStore({
-      mongooseConnection: db.mongoose.connection
+    store: new RedisStore({
+      host: config.redis.host,
+      port: config.redis.port,
+      client: redis,
+      ttl: 260
     })
+    // store: new MongoStore({
+    //   mongooseConnection: db.mongoose.connection
+    // })
   });
 } else {
   // Initialize session with settings for dev
