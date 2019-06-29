@@ -40,7 +40,6 @@ if (process.env.NODE_ENV === 'production') {
     store: new RedisStore({
       host: config.redis.host,
       port: config.redis.port,
-      client: redis,
       ttl: 600
     })
     // store: new MongoStore({
