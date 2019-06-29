@@ -76,7 +76,7 @@ let isAuthenticated = (req, res, next) => {
 // Find a chatroom by given name
 let findRoomByName = (allrooms, room) => {
   let findRoom = allrooms.findIndex((element, index, array) => {
-    if ((element.room = room)) {
+    if (element.room === room) {
       return true;
     } else {
       return false;

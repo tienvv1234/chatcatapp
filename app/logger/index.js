@@ -19,7 +19,6 @@ const logger = createLogger({
   transports: [
     new transports.Console({
       level: 'debug',
-      format: json(),
       handleExceptions: true
     })
   ],

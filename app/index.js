@@ -18,12 +18,14 @@ let ioServer = app => {
     auth_pass: config.redis.password,
     return_buffers: true
   });
+  debugger;
   io.adapter(
     adapter({
       pubClient,
       subClient
     })
   );
+
   // use the express session middleware as a Socket.IO middleware
   io.use((socket, next) => {
     require('./session')(socket.request, {}, next);

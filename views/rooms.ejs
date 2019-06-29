@@ -28,6 +28,7 @@
         socket.emit('getChatrooms');
         // Event Listener for chatRoomsList
         socket.on('chatRoomsList', chatrooms => {
+          console.log('chatrooms', chatrooms);
           renderChatRooms(JSON.parse(chatrooms));
         });
 
