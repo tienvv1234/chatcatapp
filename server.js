@@ -4,7 +4,7 @@ const cluster = require('cluster');
 const os = require('os');
 console.log('cluster.isMaster', cluster.isMaster);
 if (cluster.isMaster) {
-  for (let index = 0; index < 1; index++) {
+  for (let index = 0; index < os.cpus().length; index++) {
     console.log('cluster ' + index);
     cluster.fork();
   }
