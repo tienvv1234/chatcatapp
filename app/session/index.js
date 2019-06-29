@@ -7,7 +7,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const config = require('../config');
 const db = require('../db');
-const redis = require('redis').createClient();
 const RedisStore = require('connect-redis')(session);
 
 if (process.env.NODE_ENV === 'production') {
@@ -15,14 +14,13 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = session({
     secret: config.sessionSecret,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie: {
       maxAge: 600000
     },
     store: new RedisStore({
       host: config.redis.host,
       port: config.redis.port,
-      client: redis,
       ttl: 86400
     })
     // store: new MongoStore({
