@@ -17,6 +17,9 @@ if (process.env.NODE_ENV === 'production') {
     secret: config.sessionSecret,
     resave: false,
     saveUninitialized: true,
+    cookie: {
+      maxAge: 600000
+    },
     store: new RedisStore({
       host: config.redis.host,
       port: config.redis.port,
@@ -36,14 +39,14 @@ if (process.env.NODE_ENV === 'production') {
     cookie: {
       maxAge: 600000
     },
-    // store: new RedisStore({
-    //   host: config.redis.host,
-    //   port: config.redis.port,
-    //   client: redis,
-    //   ttl: 600
-    // })
-    store: new MongoStore({
-      mongooseConnection: db.mongoose.connection
+    store: new RedisStore({
+      host: config.redis.host,
+      port: config.redis.port,
+      client: redis,
+      ttl: 600
     })
+    // store: new MongoStore({
+    //   mongooseConnection: db.mongoose.connection
+    // })
   });
 }
