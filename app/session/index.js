@@ -17,8 +17,9 @@ if (process.env.NODE_ENV === 'production') {
     resave: false,
     saveUninitialized: true,
     store: new RedisStore({
-      host: config.redis.host,
-      port: config.redis.port,
+      host:
+        'redis://h:p6c0e318479b97b7540b4b0194694ade7aaea47c083705dc32577b0a851c6e17f@ec2-35-173-225-39.compute-1.amazonaws.com',
+      port: '25459',
       client: redis,
       ttl: 86400
     })
