@@ -15,12 +15,12 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = session({
     secret: config.sessionSecret,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     store: new RedisStore({
       host: config.redis.host,
       port: config.redis.port,
       client: redis,
-      ttl: 260
+      ttl: 86400
     })
     // store: new MongoStore({
     //   mongooseConnection: db.mongoose.connection
