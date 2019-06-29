@@ -19,7 +19,6 @@ if (process.env.NODE_ENV === 'production') {
     store: new RedisStore({
       host: config.redis.host,
       port: config.redis.port,
-      client: redis,
       pass: config.redis.ppassword,
       ttl: 86400
     })
