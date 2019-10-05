@@ -19,12 +19,12 @@ let ioServer = app => {
     return_buffers: true
   });
   debugger;
-  io.adapter(
-    adapter({
-      pubClient,
-      subClient
-    })
-  );
+  // io.adapter(
+  //   adapter({
+  //     pubClient,
+  //     subClient
+  //   })
+  // );
 
   // use the express session middleware as a Socket.IO middleware
   io.use((socket, next) => {

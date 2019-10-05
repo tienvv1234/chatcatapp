@@ -37,13 +37,13 @@ if (process.env.NODE_ENV === 'production') {
     cookie: {
       maxAge: 600000
     },
-    store: new RedisStore({
-      host: config.redis.host,
-      port: config.redis.port,
-      ttl: 600
-    })
-    // store: new MongoStore({
-    //   mongooseConnection: db.mongoose.connection
+    // store: new RedisStore({
+    //   host: config.redis.host,
+    //   port: config.redis.port,
+    //   ttl: 86400
     // })
+    store: new MongoStore({
+      mongooseConnection: db.mongoose.connection
+    })
   });
 }
